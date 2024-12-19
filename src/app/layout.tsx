@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Logo from '@/components/Logo'
 
 export const metadata: Metadata = {
   title: 'AI TK - 0基础小白的中文学习网站',
@@ -19,7 +20,7 @@ export default function RootLayout({
         <nav className="navbar">
           <div className="nav-content">
             <Link href="/" className="logo">
-              <span className="logo-text">AI TK</span>
+              <Logo />
             </Link>
             <div className="nav-links">
               <Link href="/chatgpt">ChatGPT教程</Link>
