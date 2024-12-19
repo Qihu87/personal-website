@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'AI TK - 0基础小白的中文学习网站',
+  title: 'AI TK - 0基础小白的AI中文学习网站',
   description: '将用最简明了的教程帮你入门AI相关知识',
 }
 
