@@ -1,1 +1,5 @@
-# personal-website
+# 我的 Next.js 项目
+
+这是一个使用 Next.js 14 创建的网站项目。
+
+## 项目结构
