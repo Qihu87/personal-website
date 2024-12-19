@@ -3,7 +3,7 @@
   \*****************************************************************************************************************************************************************************************************************************************************************/
 /* CSS变量定义 - 定义全局使用的颜色变量 */
 :root {
-  --primary-color: #50F795;  /* 主题色-绿色 */
+  --primary-color: #45FF83;  /* 主题色-绿色 */
   --bg-dark: #0A0A0A;        /* 背景色-深色 */
   --text-light: #FFFFFF;     /* 文字颜色-亮色 */
   --text-gray: #666666;      /* 文字颜色-灰色 */
@@ -51,16 +51,21 @@ body {
 
 /* Logo样式 - 网站Logo的基础样式 */
 .logo {
-  display: block;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  object-fit: contain;
+  width: 134px;
+  height: 54px;
 }
 
 /* 导航链接组样式 - 包含所有导航链接的容器 */
 .nav-links {
   display: flex;
   gap: 2px;  /* 导航项之间的间距 */
-  margin-left: 48px;  /* 与logo的间距 */
+  margin-left: 24px;  /* 与logo的间距 */
 }
 
 /* 导航链接样式 - 单个导航链接的样式 */
@@ -83,20 +88,46 @@ body {
 /* 社交链接组样式 - 右侧社交媒体链接的容器 */
 .social-links {
   display: flex;
-  gap: 16px;
-  margin-left: auto;  /* 推到右侧 */
+  gap: 12px;
+  margin-left: auto;
+  align-items: center;
 }
 
-/* 社交链接样式 - 单个社交媒体链接的样式 */
+/* 社交链接基础样式 */
 .social-icon {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
 }
 
 /* 社交链接悬停效果 */
 .social-icon:hover {
-  color: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* 小红书图标特定样式 */
+.xiaohongshu-icon {
+  width: 103px !important;
+  height: 54px !important;
+}
+
+/* YouTube图标特定样式 */
+.youtube-icon {
+  width: 106px !important;
+  height: 54px !important;
+}
+
+/* 哔哩哔哩图标特定样式 */
+.bilibili-icon {
+  width: 60px !important;
+  height: 54px !important;
+}
+
+/* 微信图标特定样式 */
+.wechat-icon {
+  width: 60px !important;
+  height: 54px !important;
 }
 
 /* 英雄区域样式 - 网站首屏大图区域 */
@@ -278,7 +309,7 @@ body {
     padding-top: 80px;
   }
   
-  /* 减小移动端标题字号 */
+  /* 小移动端标题字号 */
   .hero-title {
     font-size: 36px;
   }

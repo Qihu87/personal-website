@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Logo from '@/components/Logo'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'AI TK - 0基础小白的中文学习网站',
@@ -20,7 +20,13 @@ export default function RootLayout({
         <nav className="navbar">
           <div className="nav-content">
             <Link href="/" className="logo">
-              <Logo />
+              <Image 
+                src="/images/logo/logo.png"
+                alt="AI TK Logo"
+                width={120}
+                height={40}
+                priority
+              />
             </Link>
             <div className="nav-links">
               <Link href="/chatgpt">ChatGPT教程</Link>
@@ -30,10 +36,42 @@ export default function RootLayout({
               <Link href="/about">关于我</Link>
             </div>
             <div className="social-links">
-              <Link href="/xiaohongshu" className="social-icon">小红书</Link>
-              <Link href="/youtube" className="social-icon">YouTube</Link>
-              <Link href="/bilibili" className="social-icon">哔哩哔哩</Link>
-              <Link href="/wechat" className="social-icon">微信</Link>
+              <Link href="/xiaohongshu" className="social-icon">
+                <Image 
+                  src="/images/social/xiaohongshu.png"
+                  alt="小红书"
+                  width={103}
+                  height={54}
+                  className="xiaohongshu-icon"
+                />
+              </Link>
+              <Link href="/youtube" className="social-icon">
+                <Image 
+                  src="/images/social/youtube.png"
+                  alt="YouTube"
+                  width={106}
+                  height={54}
+                  className="youtube-icon"
+                />
+              </Link>
+              <Link href="/bilibili" className="social-icon">
+                <Image 
+                  src="/images/social/bilibili.png"
+                  alt="哔哩哔哩"
+                  width={24}
+                  height={24}
+                  className="bilibili-icon"
+                />
+              </Link>
+              <Link href="/wechat" className="social-icon">
+                <Image 
+                  src="/images/social/wechat.png"
+                  alt="微信"
+                  width={24}
+                  height={20}
+                  className="wechat-icon"
+                />
+              </Link>
             </div>
           </div>
         </nav>
