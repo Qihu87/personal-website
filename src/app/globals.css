@@ -29,7 +29,7 @@ body {
   right: 0;
   background-color: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);  /* 背景模糊效果 */
-  padding: 16px 0;
+  padding: 12px 0;
   z-index: 1000;
   margin: 0;
 }

@@ -38,7 +38,7 @@ export default function RootLayout({
             <div className="social-links">
               <Link href="/xiaohongshu" className="social-icon">
                 <Image 
-                  src="/images/social/xiaohongshu.png"
+                  src="/images/social/xiaohongshu.svg"
                   alt="小红书"
                   width={103}
                   height={54}
@@ -47,7 +47,7 @@ export default function RootLayout({
               </Link>
               <Link href="/youtube" className="social-icon">
                 <Image 
-                  src="/images/social/youtube.png"
+                  src="/images/social/youtube.svg"
                   alt="YouTube"
                   width={106}
                   height={54}
@@ -56,7 +56,7 @@ export default function RootLayout({
               </Link>
               <Link href="/bilibili" className="social-icon">
                 <Image 
-                  src="/images/social/bilibili.png"
+                  src="/images/social/bilibili.svg"
                   alt="哔哩哔哩"
                   width={24}
                   height={24}
@@ -65,7 +65,7 @@ export default function RootLayout({
               </Link>
               <Link href="/wechat" className="social-icon">
                 <Image 
-                  src="/images/social/wechat.png"
+                  src="/images/social/wechat.svg"
                   alt="微信"
                   width={24}
                   height={20}
