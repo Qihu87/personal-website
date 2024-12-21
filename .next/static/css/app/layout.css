@@ -454,7 +454,7 @@ body::before {
 }
 
 .tool-card:hover {
-  background-color: #F4F4F4;  /* 悬停时显示背景色 */
+  background-color: #f8f8f8;  /* 悬停时显示背景色 */
   /* 删除 transform: translateY(-2px) */
 }
 
