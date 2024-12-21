@@ -7,6 +7,7 @@
   overflow: hidden;
   border-radius: 32px;
   position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .Banner_bannerSlider__mWmaP {
@@ -23,9 +24,13 @@
 }
 
 .Banner_bannerSlide__tsXgu img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /* 指示器容器 */
@@ -46,4 +51,39 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   transition: opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 进度条 */
+.Banner_indicator__Ut9nD::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateX(-100%);
+}
+
+/* 当前活动指示器的进度条动画 */
+.Banner_indicator__Ut9nD.Banner_active__MYPtE::after {
+  animation: Banner_progress__aRQmP 3s linear forwards;
+  animation-play-state: running;
+}
+
+/* 暂停状态 */
+.Banner_indicator__Ut9nD.Banner_active__MYPtE.Banner_paused__XI52j::after {
+  animation-play-state: paused;
+}
+
+/* 进度条动画 */
+@keyframes Banner_progress__aRQmP {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 } 

@@ -55,13 +55,12 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  background: linear-gradient(90deg, rgb(29 47 40 / 87%) 0%, rgb(6 10 9 / 55%) 100%); /* 渐变背景 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(24px);
   padding: 12px 0;
   z-index: 1000;
   width: 100%;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 /* 导航栏内容布局 - 控制导航栏内部元素的排列 */
@@ -271,6 +270,7 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: auto;
 }
 
 .kapian31 {
@@ -521,7 +521,7 @@ body::before {
     display: none;
   }
   
-  /* 调整���雄区域为垂直布局 */
+  /* 调整雄区域为垂直布局 */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -567,26 +567,22 @@ body::before {
 @media (max-width: 1200px) {
   .tools-section {
     flex-direction: column;
+    gap: 16px;
   }
 
   .section-container,
   .kapian2,
   .kapian3 {
-    min-width: calc(100% - 80px);  /* 减去左右padding 40px */
-    margin: 8px 0;
+    min-width: 100%;
+    margin: 0;
   }
 
   .kapian31 {
-    min-width: 100%;
+    min-height: 348px;
   }
 
   .kapian32 {
-    min-width: 100%;
-  }
-
-  .kapian321,
-  .kapian322 {
-    min-width: calc(50% - 8px);  /* 保持两个卡片之间的间距 */
+    min-height: 174px;
   }
 }
 
@@ -708,7 +704,7 @@ body::before {
   line-height: 1.4;
 }
 
-/* 视频来源图标容器 */
+/* 视频来源图标��器 */
 .video-source {
   position: absolute;
   top: 0px;  /* 调整到左上角 */
@@ -729,5 +725,11 @@ body::before {
   width: 60px;  /* 增加图标尺寸 */
   height: 32px;  /* 增加图标尺寸 */
   object-fit: contain;
+}
+
+/* 浅色主题下的导航栏样式 */
+[data-theme="light"] .navbar {
+  background: rgba(241, 247, 243, 0.6); /* 浅色主题下的半透明背景 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 浅色主题下的边框 */
 }
  
