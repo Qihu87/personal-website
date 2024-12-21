@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import BackgroundGlow from './components/BackgroundGlow'
 
 export const metadata: Metadata = {
   title: 'AI TK - 0基础小白的AI中文学习网站',
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="zh">
       <body>
-        {/* 导航栏 */}
+        <BackgroundGlow />
         <nav className="navbar">
           <div className="nav-content">
             <Link href="/" className="logo">

@@ -6,7 +6,7 @@ export default function Home() {
         <div className="hero-content">
           <h1 className="hero-title">
             AI TK ,<br />
-            <span className="highlight">0基础小白的中文学习网站</span>
+            <span className="white-text">0基础小白的AI中文学习网站</span>
           </h1>
           <p className="hero-description">
             在这里，将用最简明了的教程帮你入门AI相关知识，学习基础相关，你会自己开花
