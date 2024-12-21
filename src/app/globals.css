@@ -40,12 +40,12 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, #1A2525 0%, #090A0D 100%);
+  backdrop-filter: blur(20px);
   padding: 12px 0;
   z-index: 1000;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 /* 导航栏内容布局 - 控制导航栏内部元素的排列 */
@@ -146,8 +146,8 @@ body::before {
   z-index: 1;
   min-height: calc(100px - 78px);  /* 减去导航栏的高度 */
   margin-top: 222px;  /* 设置与导航栏的间距为142px */
-  margin-bottom: 172px;
-  padding: 0 40px;  /* 移除顶部内边距，只保留左右内边距 */
+  margin-bottom: 108px;
+  padding: 0 100px;  /* 移除顶部内边距，只保留左右内边距 */
   display: flex;
   align-items: flex-start;  /* 改为顶部对齐 */
   justify-content: space-between;
@@ -160,8 +160,9 @@ body::before {
 /* 英雄区域内容样式 - 左侧文字内容区域 */
 .hero-content {
   flex: 1;
-  padding-top: 0;  /* 移除顶部内边距 */
-  max-width: 800px;  /* 限制内容区域宽度 */
+  padding-top: 0;
+  max-width: 800px;
+  transition: all 0.3s ease;
 }
 
 /* 英雄区域标题样 */
@@ -169,8 +170,9 @@ body::before {
   font-size: 60px;
   line-height: 1.2;
   margin-bottom: 24px;
-  width: 800px;  /* 设置标题容器宽度为650px */
-  max-width: 100%;  /* 确保在小屏幕上不会溢出 */
+  width: 800px;
+  max-width: 100%;
+  transition: all 0.3s ease;
 }
 
 /* 高亮文字样式 - 使用主题色的文字 */
@@ -222,7 +224,7 @@ body::before {
   transition: background-color 0.2s;
 }
 
-/* ��要按钮悬停效果 */
+/* 次要按钮悬停效果 */
 .secondary-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -231,25 +233,25 @@ body::before {
 .tools-section {
   padding: 40px 40px;
   display: flex;
-  flex-wrap: wrap; /* 允许卡片换行 */
-  gap: 16px; /* 统一的间距 */
+  flex-wrap: wrap;
+  gap: 16px;
   max-width: 1840px;
   margin: 0 auto;
 }
 
-/* 工具区域内容容器 - 使用flex-basis实现流畅的宽度变化 */
+/* 工具卡片区域内容容器 */
 .section-container,
 .kapian2 {
-  flex: 1 1 min(598px, calc(33% - 16px)); /* 使用flex-basis实现流畅的宽度变化 */
+  flex: 1 1 clamp(460px, calc(33.333% - 16px), 620px); /* 默认三列布局 */
   min-height: 538px;
   background: #FFFFFF;
   border-radius: 32px;
-  transition: all 0.3s ease; /* 添加过渡效果使变化更平滑 */
+  transition: all 0.3s ease;
 }
 
 /* 第三列卡片组合 */
 .kapian3 {
-  flex: 1 1 min(614px, calc(33% - 16px));
+  flex: 1 1 clamp(460px, calc(33.333% - 16px), 620px);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -287,43 +289,63 @@ body::before {
 }
 
 /* 响应式布局断点 */
-@media (max-width: 1800px) {
-  .section-container,
-  .kapian2,
-  .kapian3 {
-    flex: 1 1 min(598px, calc(50% - 16px)); /* 两列布局 */
+@media (max-width: 1400px) {
+  /* 首先调整大标题宽度 */
+  .hero-title {
+    width: 600px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
   }
 }
 
 @media (max-width: 1200px) {
-  .section-container,
-  .kapian2,
-  .kapian3 {
-    flex: 1 1 100%; /* 单列布局 */
+  /* 然后调整右侧内容框宽度 */
+  .avatar-group {
+    max-width: 300px;
   }
   
-  .kapian32 {
-    flex-wrap: wrap; /* 允许小卡片在窄屏下换行 */
+  .hero-avatars {
+    flex: 0.8;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* 最后改变为竖向布局 */
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
   }
   
-  .kapian321,
-  .kapian322 {
-    flex: 1 1 100%;
-    height: 174px;
+  .hero-content,
+  .hero-title {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-avatars {
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .avatar-group {
+    max-width: 100%;
   }
 }
 
 /* 移动端优化 */
 @media (max-width: 768px) {
   .tools-section {
-    padding: 20px;
+    padding: 40px 40px;
     gap: 12px;
   }
   
   .section-container,
   .kapian2,
   .kapian3 {
-    min-height: 400px; /* 减小移动端卡片高度 */
+    min-height: 400px;
   }
   
   .kapian31 {
@@ -394,14 +416,15 @@ body::before {
   display: inline-block;
 }
 
-/* 头像组样式 - 右侧头像展示区 */
+/* 头像组样式 - 右侧头像展区 */
 .hero-avatars {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 24px;
-  padding-top: 0;  /* 移除顶部内边距 */
+  padding-top: 0;
+  transition: all 0.3s ease;
 }
 
 /* 头像组容器样式 */
@@ -443,7 +466,7 @@ body::before {
     align-items: center;
   }
   
-  /* 工具卡片改为单列显示 */
+  /* 工具卡片改列显示 */
   .tools-grid {
     grid-template-columns: 1fr;
   }
@@ -458,6 +481,7 @@ body::before {
   height: 1028px;
   pointer-events: none;
   z-index: -1;
+  opacity: 0.5; /* 添加50%的透明度 */
 }
 
 /* 背景光影图片样式 */

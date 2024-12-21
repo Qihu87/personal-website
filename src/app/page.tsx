@@ -1,6 +1,11 @@
 export default function Home() {
   return (
     <main>
+      {/* 背景光影效果 */}
+      <div className="background-glow">
+        <img src="/images/hero/bg2.png" alt="background glow effect" />
+      </div>
+      
       {/* 英雄区域 */}
       <section className="hero">
         <div className="hero-content">
