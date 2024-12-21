@@ -100,7 +100,7 @@ body::before {
   margin-left: 24px;  /* 与logo的间距 */
 }
 
-/* 导航链接样式 - 单个导航链接的样式 */
+/* ���航链接样式 - 单个导航链接的样式 */
 .nav-links a {
   color: var(--text-primary);
   text-decoration: none;
@@ -539,7 +539,7 @@ body::before {
   max-width: 400px;
 }
 
-/* 头像组文字样��� */
+/* 头像组文字样式 */
 .avatar-text {
   color: var(--text-gray);
   font-size: 14px;
@@ -775,7 +775,12 @@ body::before {
 /* 浅色主题下的主按钮样式 */
 [data-theme="light"] .primary-button {
   background-color: #000000; /* 黑色背景 */
-  color: #FFFFFF; /* 白色文字 */
+  color: var(--primary-color); /* 修改为主题色 */
+}
+
+/* 浅色主题下的主按钮文字样式 */
+[data-theme="light"] .primary-button span {
+  color: var(--primary-color); /* 确保文字也是主题色 */
 }
 
 /* 移除浅色主题下按钮hover时的背景透明度变化 */
