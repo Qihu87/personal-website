@@ -24,7 +24,7 @@ export default function Home() {
             <span className="avatar-text">
               小学文案介绍小学文案介绍小学文案介绍小学文案介绍
               小学文案介绍小学文案介绍小学文案介绍小学文案介绍小学文案介绍
-              小学文案介绍小学文案介绍小学文案
+              小学文案介���小学文案介绍小学文案
             </span>
           </div>
           <button className="secondary-button">敬请期待</button>
@@ -37,14 +37,44 @@ export default function Home() {
           <h2 className="section-title">我开发的</h2>
           <div className="tools-grid">
             <div className="tool-card">
-              <div className="tool-icon">C</div>
+              <div className="tool-icon">
+                <img src="/images/icons/chatggs.png" alt="Chatggs" />
+              </div>
               <div className="tool-content">
                 <h3>Chatggs</h3>
-                <span className="tag">Web站点</span>
                 <p>免费的图片压缩、图片格式转换工具</p>
               </div>
             </div>
-            {/* 更多工具卡片 */}
+
+            <div className="tool-card">
+              <div className="tool-icon">
+                <img src="/images/icons/format.png" alt="图片格式" />
+              </div>
+              <div className="tool-content">
+                <h3>图片格式</h3>
+                <p>免费的图片压缩、图片格式转换工具压缩、图片格式转换工具</p>
+              </div>
+            </div>
+
+            <div className="tool-card">
+              <div className="tool-icon">
+                <img src="/images/icons/converter.png" alt="图片格式转换工具" />
+              </div>
+              <div className="tool-content">
+                <h3>图片格式转换工具</h3>
+                <p>免费的图片压缩、图片格式转换工具压缩、图片格式转换工具</p>
+              </div>
+            </div>
+
+            <div className="tool-card">
+              <div className="tool-icon">
+                <img src="/images/icons/transform.png" alt="图片格式转换" />
+              </div>
+              <div className="tool-content">
+                <h3>图片格式转换</h3>
+                <p>免费的图片压缩、图片格式转换工具压缩、图片格式转换工具</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="kapian2">
@@ -53,7 +83,9 @@ export default function Home() {
           <div className="kapian31"></div>
           <div className="kapian32">
             <div className="kapian321"></div>
-            <div className="kapian322"></div>
+            <div className="kapian322">
+              <p>祝你好运</p>
+            </div>
           </div>
         </div>
       </section>
