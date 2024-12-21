@@ -7,6 +7,18 @@
   --bg-dark: #0A0A0A;        /* 背景色-深色 */
   --text-light: #FFFFFF;     /* 文字颜色-亮色 */
   --text-gray: #666666;      /* 文字颜色-灰色 */
+  --bg-gradient: linear-gradient(119deg, #17181F 12.9%, #0D0E12 45.05%, #000 88.43%);
+  --text-primary: #FFFFFF;
+  --text-secondary: #666666;
+  --nav-bg: linear-gradient(90deg, #1A2525 0%, #090A0D 100%);
+}
+
+/* 浅色主题变量 */
+[data-theme="light"] {
+  --bg-gradient: #F1F7F3;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --nav-bg: rgba(241, 247, 243, 0.8);
 }
 
 /* 全局样式重置 - 清除默认边距和设置盒模型 */
@@ -18,7 +30,7 @@
 
 /* 页面基础样式 - 设置渐变背景色、字体等基础样式 */
 body {
-  color: var(--text-light);
+  color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   min-height: 100vh;
   position: relative;
@@ -33,7 +45,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(119deg, #17181F 12.9%, #0D0E12 45.05%, #000 88.43%);
+  background: var(--bg-gradient);
   z-index: -2;  /* 渐变背景在最底层 */
 }
 
@@ -43,7 +55,7 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, #1A2525 0%, #090A0D 100%);
+  background: var(--nav-bg);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 12px 0;
@@ -84,7 +96,7 @@ body::before {
 
 /* 导航链接样式 - 单个导航链接的样式 */
 .nav-links a {
-  color: var(--text-light);
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 18px;
   padding: 15px 18px;  /* 上下10px，左右18px的内边距 */
@@ -144,7 +156,7 @@ body::before {
   height: 54px !important;
 }
 
-/* 英雄区域样式 - 网站首屏大图区域 */
+/* 英雄区域样式 - ��站首屏大图区域 */
 .hero {
   position: relative;
   z-index: 1;
@@ -189,10 +201,10 @@ body::before {
   color: var(--text-light);  /* 使用预定义的白色变量 */
 }
 
-/* 英雄区域描述文字样式 */
+/* 英文区域描述文字样式 */
 .hero-description {
   font-size: 20px;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 60px;
   max-width: 1000px;
   /* padding-bottom: 60px; */
@@ -253,7 +265,7 @@ body::before {
   transition: all 0.3s ease;
 }
 
-/* 第三列卡片组合 */
+/* 第三列卡组合 */
 .kapian3 {
   flex: 1 1 clamp(460px, calc(33.333% - 16px), 620px);
   display: flex;
@@ -378,7 +390,7 @@ body::before {
   padding: 32px 48px;  /* 修改左右内边距为48px */
 }
 
-/* ��具卡片网格布局 */
+/* 具卡片网格布局 */
 .tools-grid {
   display: flex;
   flex-direction: column;
@@ -517,135 +529,6 @@ body::before {
   object-fit: cover;
 }
 
-/* 响应式设计 - 平板设备 (768px - 1024px) */
-@media (max-width: 1024px) {
-  .hero {
-    margin-top: 160px;
-    padding: 0 24px;
-    gap: 32px;
-  }
-
-  .hero-title {
-    font-size: 48px;
-    width: 100%;
-  }
-
-  .hero-description {
-    font-size: 18px;
-  }
-
-  .primary-button {
-    padding: 16px 32px;
-    font-size: 24px;
-  }
-}
-
-/* 响应式设计 - 移动端 (768px以下) */
-@media (max-width: 768px) {
-  /* 导航栏调整 */
-  .nav-content {
-    padding: 0 20px;
-  }
-
-  .logo img {
-    width: 100px;
-    height: 40px;
-  }
-
-  /* 社交媒体图标大小调整 */
-  .xiaohongshu-icon,
-  .youtube-icon {
-    width: 80px !important;
-    height: 40px !important;
-  }
-
-  .bilibili-icon,
-  .wechat-icon {
-    width: 45px !important;
-    height: 40px !important;
-  }
-
-  /* 英雄区域调整 */
-  .hero {
-    margin-top: 100px;
-    padding: 0 20px;
-    min-height: auto;
-  }
-
-  .hero-content {
-    padding-top: 0;
-  }
-
-  .hero-title {
-    font-size: 32px;
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  .hero-description {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .primary-button {
-    padding: 14px 28px;
-    font-size: 20px;
-    border-radius: 16px;
-  }
-
-  /* 头像组样式调整 */
-  .hero-avatars {
-    width: 100%;
-  }
-
-  .avatar-group {
-    max-width: 100%;
-    padding: 16px;
-  }
-
-  .avatar-text {
-    font-size: 13px;
-  }
-}
-
-/* 超小屏幕设备 (375px以下) */
-@media (max-width: 375px) {
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  .primary-button {
-    padding: 12px 24px;
-    font-size: 18px;
-  }
-
-  .nav-content {
-    padding: 0 16px;
-  }
-}
-
-/* 处理横屏模式 */
-@media (max-height: 600px) and (orientation: landscape) {
-  .hero {
-    margin-top: 80px;
-    min-height: auto;
-  }
-}
-
-/* 添加响应式处理 */
-@media (max-width: 768px) {
-  .background-glow {
-    width: 100vw;
-    height: 100vh;
-    top: -150px;
-    left: 0;
-  }
-}
-
 /* 响应式设计 - 平板设备 (1200px以下) */
 @media (max-width: 1200px) {
   .tools-section {
@@ -709,5 +592,30 @@ body::before {
   .kapian3 {
     min-width: calc(100% - 32px);  /* 减去左右padding 16px */
   }
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
  

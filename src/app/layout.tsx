@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import BackgroundGlow from './components/BackgroundGlow'
+import ThemeToggle from '../components/ThemeToggle'
 
 export const metadata: Metadata = {
   title: 'AI TK - 0基础小白的AI中文学习网站',
@@ -77,6 +78,7 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+        <ThemeToggle />
       </body>
     </html>
   )
