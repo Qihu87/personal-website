@@ -152,7 +152,7 @@ body::before {
   height: 54px !important;
 }
 
-/* 英雄区域样式 - ��站首屏大图区域 */
+/* 英雄区域样式 - 站首屏大图区域 */
 .hero {
   position: relative;
   z-index: 1;
@@ -255,7 +255,7 @@ body::before {
 .section-container,
 .kapian2 {
   flex: 1 1 clamp(460px, calc(33.333% - 16px), 620px); /* 默认三列布局 */
-  min-height: 538px;
+  min-height: 530px;
   background: #FFFFFF;
   border-radius: 32px;
   transition: all 0.3s ease;
@@ -291,6 +291,7 @@ body::before {
   border-radius: 32px;
   transition: all 0.3s ease;
   font-size: 24px;
+  font-weight: bold;  /* 添加粗体 */
   color: #000000;
   background: #44FF83;
   display: flex;
@@ -378,18 +379,22 @@ body::before {
 
 /* 区标题样式 */
 .section-title {
-  font-size: 32px;
+  font-size: 28px;
   color: #000000;
   margin-bottom: 32px;
-  padding: 32px 48px;  /* 修改左右内边距为48px */
+  /* padding: 40px 48px;  修改左右内边距为48px */
+  padding-top: 40px;
+  padding-bottom: 0px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 /* 具卡片网格布局 */
 .tools-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 0 48px;  /* 设置左右内边距为48px */
+  gap: 2px;
+  padding: 0 36px;  /* 设置左右内边距为48px */
   width: 100%;  /* 确保列表宽度适配卡片 */
 }
 
@@ -397,8 +402,17 @@ body::before {
 .tool-card {
   display: flex;
   gap: 16px;
-  align-items: flex-start;
-  width: 100%;  /* 确保卡片宽度撑满容器 */
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.tool-card:hover {
+  background-color: #F4F4F4;  /* 悬停时显示背景色 */
+  /* 删除 transform: translateY(-2px) */
 }
 
 /* 工具图标样式 */
@@ -419,21 +433,41 @@ body::before {
 /* 工具卡片内容样式 */
 .tool-content {
   flex: 1;
-  min-width: 0;  /* 确保文本可以正确截断 */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 工具卡片标题和标签容器 */
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
 }
 
 /* 工具卡片标题样式 */
 .tool-content h3 {
   font-size: 18px;
   color: #000000;
-  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* 工具标签样式 */
+.tool-tag {
+  padding: 4px 6px;
+  background: #45FF83;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #000000;
   font-weight: 500;
 }
 
 /* 工具卡片描述文字样式 */
 .tool-content p {
   font-size: 14px;
-  color: #666666;
+  color: #D2D2D2;
   line-height: 1.4;
 }
 
@@ -481,7 +515,7 @@ body::before {
     display: none;
   }
   
-  /* 调整英雄区域为垂直布局 */
+  /* 调整���雄区域为垂直布局 */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -513,7 +547,7 @@ body::before {
   height: 1028px;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.5; /* 添加50%的透明度 */
+  opacity: 0.5; /* 添加50%的透明 */
 }
 
 /* 背景光影图片样式 */
@@ -611,5 +645,81 @@ body::before {
 .theme-toggle:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 推荐视频区域样式 */
+.video-section {
+  padding: 40px 48px;
+  width: 100%;
+}
+
+.video-section-title {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 28px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.video-card {
+  background: #F7F7F7;
+  border-radius: 12px;
+  height: 180px;
+  padding: 16px;
+  overflow: hidden;
+  text-decoration: none; /* 移除链接下划线 */
+  display: block; /* 让链接占满整个卡片区域 */
+  transition: transform 0.2s ease; /* 添加悬停动画 */
+}
+
+.video-card:hover {
+  transform: translateY(-2px); /* 悬停时轻微上浮 */
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-title {
+  font-size: 12px;
+  color: #000000;
+  line-height: 1.4;
+}
+
+/* 视频来源图标容器 */
+.video-source {
+  position: absolute;
+  top: 0px;  /* 调整到左上角 */
+  /* left: 12px;  改为左对齐 */
+  width: 80px;  /* 增加容器宽度 */
+  height: 36px;  /* 增加容器高度 */
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 视频来源图标样式 */
+.video-source img {
+  width: 60px;  /* 增加图标尺寸 */
+  height: 32px;  /* 增加图标尺寸 */
+  object-fit: contain;
 }
  

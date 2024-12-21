@@ -1,0 +1,49 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/Banner.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.Banner_bannerContainer__IaiQ7 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 32px;
+  position: relative;
+}
+
+.Banner_bannerSlider__mWmaP {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.Banner_bannerSlide__tsXgu {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Banner_bannerSlide__tsXgu img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 指示器容器 */
+.Banner_indicators__mcrnb {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+  flex-direction: row;
+}
+
+/* 单个指示器 */
+.Banner_indicator__Ut9nD {
+  width: 60px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+} 
