@@ -190,9 +190,9 @@ body::before {
 .hero-description {
   font-size: 20px;
   color: var(--text-gray);
-  margin-bottom: 32px;
+  margin-bottom: 60px;
   max-width: 1000px;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 
 /* 主要按钮样式 */
@@ -203,6 +203,7 @@ body::before {
   padding: 20px 40px;
   border-radius: 20px;
   font-size: 32px;
+  font-weight: 700;  /* 添加粗体 */
   cursor: pointer;
   transition: opacity 0.2s;
 }

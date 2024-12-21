@@ -11,7 +11,7 @@ export default function Home() {
           <p className="hero-description">
             在这里，将用最简明了的教程帮你入门AI相关知识，学习基础相关，你会自己开花
           </p>
-          <button className="primary-button">学习前必读</button>
+          <button className="primary-button">学前必读</button>
         </div>
         <div className="hero-avatars">
           {/* 这里放头像组 */}
