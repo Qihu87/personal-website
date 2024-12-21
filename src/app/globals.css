@@ -52,7 +52,7 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, rgb(29 47 40 / 87%) 0%, rgb(6 10 9 / 55%) 100%); /* 渐变背景 */
+  background: linear-gradient(90deg, rgb(29 47 40 / 87%) 0%, rgb(13 17 19 / 40%) 50%, rgb(6 10 9 / 55%) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(24px);
   padding: 12px 0;
@@ -83,6 +83,16 @@ body::before {
   height: 54px;
 }
 
+/* Logo样式 - 深色模式 */
+[data-theme="dark"] .logo img {
+  content: url('/images/logo/logo.png');
+}
+
+/* Logo样式 - 浅色模式 */
+[data-theme="light"] .logo img {
+  content: url('/images/logo/qianlogo.png');
+}
+
 /* 导航链接组样式 - 包含所有导航链接的容器 */
 .nav-links {
   display: flex;
@@ -98,13 +108,24 @@ body::before {
   padding: 15px 18px;  /* 上下10px，左右18px的内边距 */
   transition: all 0.2s ease;  /* 所有属性变化的过渡效果 */
   white-space: nowrap;  /* 防止文字换行 */
-  border-radius: 8px;  /* 圆角效果 */
+  border-radius: 12px;  /* 圆角效果 */
 }
 
-/* 导航链接悬停效果 */
+/* 深色模式下的导航链接悬停效果 */
+[data-theme="dark"] .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+/* 浅色模式下的导航链接悬停效果 */
+[data-theme="light"] .nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* 5% 黑色背景 */
+  color: var(--text-primary); /* 保持文字颜色不变 */
+}
+
+/* 移除原有的悬停效果 */
 .nav-links a:hover {
-  color: var(--primary-color);
-  background-color: rgba(80, 247, 149, 0.1);  /* 半透明的主题色背景 */
+  background-color: transparent; /* 移除默认的背景色 */
 }
 
 /* 社交链接组样式 - 右侧社交媒体链接的容器 */
@@ -177,7 +198,7 @@ body::before {
   transition: all 0.3s ease;
 }
 
-/* 英雄区域标题样 */
+/* 英雄区域标题样式 */
 .hero-title {
   font-size: 60px;
   line-height: 1.2;
@@ -200,28 +221,44 @@ body::before {
 /* 英文区域描述文字样式 */
 .hero-description {
   font-size: 20px;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.2); /* 40% 透明度的白色 */
   margin-bottom: 60px;
   max-width: 1000px;
-  /* padding-bottom: 60px; */
 }
 
 /* 主要按钮样式 */
 .primary-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--primary-color);
   color: var(--bg-dark);
   border: none;
-  padding: 20px 40px;
+  min-width: 220px;
+  height: 80px;
   border-radius: 20px;
-  font-size: 32px;
-  font-weight: 700;  /* 添加粗体 */
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: none;
+}
+
+/* 按钮文字容器 */
+.primary-button span {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  transition: font-size 0.3s ease;
+  padding: 0;
+  white-space: nowrap;
 }
 
 /* 主要按钮悬停效果 */
 .primary-button:hover {
-  opacity: 0.9;
+}
+
+/* 按钮文字悬停效果 */
+.primary-button:hover span {
+  font-size: 28px;
 }
 
 /* 次要按钮样式 */
@@ -448,7 +485,7 @@ body::before {
   margin-bottom: 4px;
 }
 
-/* 工具卡片标题样式 */
+/* 工具卡片标签样式 */
 .tool-content h3 {
   font-size: 18px;
   color: #000000;
@@ -465,7 +502,7 @@ body::before {
   font-weight: 500;
 }
 
-/* 工具卡片描述文字样式 */
+/* 工具卡片描述文样式 */
 .tool-content p {
   font-size: 14px;
   color: #D2D2D2;
@@ -502,7 +539,7 @@ body::before {
   max-width: 400px;
 }
 
-/* 头像组文字样式 */
+/* 头像组文字样��� */
 .avatar-text {
   color: var(--text-gray);
   font-size: 14px;
@@ -539,7 +576,7 @@ body::before {
   }
 } 
 
-/* 背景光影效果容器 */
+/* 背景光影效果器 */
 .background-glow {
   position: absolute;
   top: -150px;
@@ -581,7 +618,7 @@ body::before {
   }
 }
 
-/* 响应式设计 - 移动端 (768px以下) */
+/* 响应式设计 - 动端 (768px以下) */
 @media (max-width: 768px) {
   .tools-section {
     padding: 20px;
@@ -619,7 +656,7 @@ body::before {
   }
 }
 
-/* 主题切换按钮样式 */
+/* 主题切换钮样式 */
 .theme-toggle {
   position: fixed;
   right: 20px;
@@ -669,7 +706,7 @@ body::before {
   padding: 16px;
   overflow: hidden;
   text-decoration: none; /* 移除链接下划线 */
-  display: block; /* 让链接占满整个卡片区域 */
+  display: block; /* 让接占满整个卡片区域 */
   transition: transform 0.2s ease; /* 添加悬停动画 */
 }
 
@@ -698,7 +735,7 @@ body::before {
   line-height: 1.4;
 }
 
-/* 视频来源图标��器 */
+/* 视频来源图标器 */
 .video-source {
   position: absolute;
   top: 0px;  /* 调整到左上角 */
@@ -720,9 +757,43 @@ body::before {
   object-fit: contain;
 }
 
-/* 浅色主题下的导航栏样式 */
+/* 浅色题下的导航栏样式 */
 [data-theme="light"] .navbar {
-  background: rgba(241, 247, 243, 0.6); /* 浅色主题下的半透明背景 */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 浅色主题下的边框 */
+  background: linear-gradient(90deg, rgb(219 246 225 / 50%) 0%, rgb(237 247 241 / 50%) 100%);/* 浅色主题下的半透明背景 */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); 浅色主题下的边框 */
+}
+
+/* 浅色主题下的文字样式 */
+[data-theme="light"] .hero-title .white-text {
+  color: #000000; /* 黑色文字 */
+}
+
+[data-theme="light"] .hero-description {
+  color: rgba(0, 0, 0, 0.3); /* 保持浅色模式下的样式不变 */
+}
+
+/* 浅色主题下的主按钮样式 */
+[data-theme="light"] .primary-button {
+  background-color: #000000; /* 黑色背景 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+/* 移除浅色主题下按钮hover时的背景透明度变化 */
+[data-theme="light"] .primary-button:hover {
+  /* opacity: 0.9; 删除这行 */
+}
+
+/* YouTube图标 - 深色模式 */
+[data-theme="dark"] .youtube-icon {
+  content: url('/images/social/youtube.svg');
+  width: 106px !important;
+  height: 54px !important;
+}
+
+/* YouTube图标 - 浅色模式 */
+[data-theme="light"] .youtube-icon {
+  content: url('/images/social/qianyoutube.svg');
+  width: 106px !important;
+  height: 54px !important;
 }
  

@@ -17,9 +17,11 @@ export default function Home() {
             <span className="white-text">0基础小白的AI中文学习网站</span>
           </h1>
           <p className="hero-description">
-            在这里，将用最简明了的教程帮你入门AI相关知识，学习基础相关，你会自己开花
+            在这里，将用最简单明了的教程帮你入门AI相关知识。学习基础和模式，你会自己开花
           </p>
-          <button className="primary-button">学前必读</button>
+          <button className="primary-button">
+            <span>学前必读</span>
+          </button>
         </div>
         <div className="hero-avatars">
           {/* 这里放头像组 */}
@@ -129,7 +131,7 @@ export default function Home() {
                 <div className="video-thumbnail">
                   <img src="/images/videos/shipin1.png" alt="视频教程" />
                 </div>
-                <h3 className="video-title">AI 工具使用技巧分���</h3>
+                <h3 className="video-title">AI 工具使用技巧分</h3>
               </Link>
             </div>
           </div>
