@@ -148,8 +148,9 @@ body::before {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - 78px);  /* 减去导航栏的高度 */
+  min-height: calc(100px - 78px);  /* 减去导航栏的高度 */
   margin-top: 222px;  /* 设置与导航栏的间距为142px */
+  margin-bottom: 172px;
   padding: 0 40px;  /* 移除顶部内边距，只保留左右内边距 */
   display: flex;
   align-items: flex-start;  /* 改为顶部对齐 */
@@ -225,27 +226,127 @@ body::before {
   transition: background-color 0.2s;
 }
 
-/* 次要按钮悬停效果 */
+/* ��要按钮悬停效果 */
 .secondary-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 工具卡片区域样式 - 展示工具的网格区域 */
+/* 工具卡片区域样式 */
 .tools-section {
-  padding: 48px 24px;
-  background-color: #111;
+  padding: 40px 40px;
+  display: flex;
+  flex-wrap: wrap; /* 允许卡片换行 */
+  gap: 16px; /* 统一的间距 */
+  max-width: 1840px;
+  margin: 0 auto;
 }
 
-/* 工具区域内容容器 */
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* 工具区域内容容器 - 使用flex-basis实现流畅的宽度变化 */
+.section-container,
+.kapian2 {
+  flex: 1 1 min(598px, calc(33% - 16px)); /* 使用flex-basis实现流畅的宽度变化 */
+  min-height: 538px;
+  background: #FFFFFF;
+  border-radius: 32px;
+  transition: all 0.3s ease; /* 添加过渡效果使变化更平滑 */
+}
+
+/* 第三列卡片组合 */
+.kapian3 {
+  flex: 1 1 min(614px, calc(33% - 16px));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kapian31 {
+  width: 100%;
+  min-height: 348px;
+  background: #ffffff;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+
+.kapian32 {
+  width: 100%;
+  height: 174px;
+  display: flex;
+  gap: 16px;
+}
+
+.kapian321,
+.kapian322 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: calc(50% - 8px);
+  height: 174px;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+
+.kapian321 {
+  background: #ffffff;
+}
+
+.kapian322 {
+  background: #44FF83;
+}
+
+/* 响应式布局断点 */
+@media (max-width: 1800px) {
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    flex: 1 1 min(598px, calc(50% - 16px)); /* 两列布局 */
+  }
+}
+
+@media (max-width: 1200px) {
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    flex: 1 1 100%; /* 单列布局 */
+  }
+  
+  .kapian32 {
+    flex-wrap: wrap; /* 允许小卡片在窄屏下换行 */
+  }
+  
+  .kapian321,
+  .kapian322 {
+    flex: 1 1 100%;
+    height: 174px;
+  }
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .tools-section {
+    padding: 20px;
+    gap: 12px;
+  }
+  
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    min-height: 400px; /* 减小移动端卡片高度 */
+  }
+  
+  .kapian31 {
+    min-height: 250px;
+  }
+  
+  .kapian321,
+  .kapian322 {
+    height: 120px;
+  }
 }
 
 /* 区标题样式 */
 .section-title {
   font-size: 24px;
   margin-bottom: 32px;
+  padding: 32px;
 }
 
 /* 工具卡片网格布局 */
@@ -359,8 +460,7 @@ body::before {
 .background-glow {
   position: absolute;
   top: -150px;
-  left: calc(50% + 100px);
-  transform: translateX(-50%);
+  left: 0;
   width: 1920px;
   height: 1028px;
   pointer-events: none;
@@ -499,7 +599,72 @@ body::before {
     width: 100vw;
     height: 100vh;
     top: -150px;
-    left: calc(50% + 100px);
+    left: 0;
+  }
+}
+
+/* 响应式设计 - 平板设备 (1200px以下) */
+@media (max-width: 1200px) {
+  .tools-section {
+    flex-direction: column;
+  }
+
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    min-width: calc(100% - 80px);  /* 减去左右padding 40px */
+    margin: 8px 0;
+  }
+
+  .kapian31 {
+    min-width: 100%;
+  }
+
+  .kapian32 {
+    min-width: 100%;
+  }
+
+  .kapian321,
+  .kapian322 {
+    min-width: calc(50% - 8px);  /* 保持两个卡片之间的间距 */
+  }
+}
+
+/* 响应式设计 - 移动端 (768px以下) */
+@media (max-width: 768px) {
+  .tools-section {
+    padding: 20px;
+  }
+
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    min-width: calc(100% - 40px);  /* 减去左右padding 20px */
+  }
+
+  .kapian32 {
+    flex-direction: column;
+    height: auto;
+    min-height: 368px;  /* 174px * 2 + 20px gap */
+  }
+
+  .kapian321,
+  .kapian322 {
+    min-width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* 超小屏幕设备 (375px以下) */
+@media (max-width: 375px) {
+  .tools-section {
+    padding: 16px;
+  }
+
+  .section-container,
+  .kapian2,
+  .kapian3 {
+    min-width: calc(100% - 32px);  /* 减去左右padding 16px */
   }
 }
  
