@@ -357,14 +357,14 @@ body::before {
 
 /* 背景光影效果容器 */
 .background-glow {
-  position: fixed;
-  top: 0;
-  left: 50%;
+  position: absolute;
+  top: -150px;
+  left: calc(50% + 100px);
   transform: translateX(-50%);
   width: 1920px;
   height: 1028px;
   pointer-events: none;
-  z-index: -1;  /* 光影效果在渐变背景之上，内容之下 */
+  z-index: -1;
 }
 
 /* 背景光影图片样式 */
@@ -372,5 +372,134 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 响应式设计 - 平板设备 (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    margin-top: 160px;
+    padding: 0 24px;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .primary-button {
+    padding: 16px 32px;
+    font-size: 24px;
+  }
+}
+
+/* 响应式设计 - 移动端 (768px以下) */
+@media (max-width: 768px) {
+  /* 导航栏调整 */
+  .nav-content {
+    padding: 0 20px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 40px;
+  }
+
+  /* 社交媒体图标大小调整 */
+  .xiaohongshu-icon,
+  .youtube-icon {
+    width: 80px !important;
+    height: 40px !important;
+  }
+
+  .bilibili-icon,
+  .wechat-icon {
+    width: 45px !important;
+    height: 40px !important;
+  }
+
+  /* 英雄区域调整 */
+  .hero {
+    margin-top: 100px;
+    padding: 0 20px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-top: 0;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .primary-button {
+    padding: 14px 28px;
+    font-size: 20px;
+    border-radius: 16px;
+  }
+
+  /* 头像组样式调整 */
+  .hero-avatars {
+    width: 100%;
+  }
+
+  .avatar-group {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .avatar-text {
+    font-size: 13px;
+  }
+}
+
+/* 超小屏幕设备 (375px以下) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .primary-button {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  .nav-content {
+    padding: 0 16px;
+  }
+}
+
+/* 处理横屏模式 */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    margin-top: 80px;
+    min-height: auto;
+  }
+}
+
+/* 添加响应式处理 */
+@media (max-width: 768px) {
+  .background-glow {
+    width: 100vw;
+    height: 100vh;
+    top: -150px;
+    left: calc(50% + 100px);
+  }
 }
  
